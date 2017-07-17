@@ -22,6 +22,27 @@ if (endpoint === "/"){
     response.end(file);
 
   })
+}else if (endpoint === "/main.css"){
+  response.writeHead(200, {'Content-Type': 'text/css'} );
+  fs.readFile(__dirname + "/../public/main.css", function(error, file) {
+    if (error){
+      console.log(error);
+      return;
+    }
+    response.end(file);
+
+  })}
+else if (endpoint === "/img/image.jpg"){
+  response.writeHead(200, {'Content-Type': 'image/jpg'} );
+  fs.readFile(__dirname + "/../public/img/image.jpg", function(error, file) {
+    if (error){
+      console.log(error);
+      return;
+    }
+    response.end(file);
+
+  })
+
 }
 }
 
